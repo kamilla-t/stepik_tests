@@ -1,11 +1,13 @@
 from selenium.webdriver.common.by import By
+import time
 
 
 def test_guest_should_see_button_add_to_card_pass(browser, request):
     user_language = request.config.getoption("language")
     link = f"http://selenium1py.pythonanywhere.com/{user_language}/catalogue/coders-at-work_207/"
     browser.get(link)
-    browser.find_element(By.CLASS_NAME, "btn-add-to-basket")
+    button = browser.find_element(By.CLASS_NAME, "btn-add-to-basket")
+    assert button, 'no such button!'
 
 # def test_guest_should_see_login_link_fail(browser):
 #     browser.get(link)

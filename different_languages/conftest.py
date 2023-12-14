@@ -19,6 +19,8 @@ def browser(request):
         options.add_experimental_option('prefs', {'intl.accept_languages': 'es-ES'})
     elif user_language == "ru":
         options.add_experimental_option('prefs', {'intl.accept_languages': 'ru-RU'})
+    elif user_language == "fr":
+        options.add_experimental_option('prefs', {'intl.accept_languages': 'fr-FR'})
     else:
         raise pytest.UsageError("--language should be es or ru")
     
